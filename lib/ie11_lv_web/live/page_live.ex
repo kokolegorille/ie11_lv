@@ -1,8 +1,11 @@
 defmodule Ie11LvWeb.PageLive do
   use Ie11LvWeb, :live_view
+  require Logger
 
   @impl true
   def mount(_params, _session, socket) do
+    Logger.info("MOUNT")
+    send(self(), {:hello, "world"})
     {:ok, assign(socket, query: "", results: %{})}
   end
 
@@ -23,6 +26,12 @@ defmodule Ie11LvWeb.PageLive do
          |> put_flash(:error, "No dependencies found matching \"#{query}\"")
          |> assign(results: %{}, query: query)}
     end
+  end
+
+  @impl true
+  def handle_info({:hello, message}, socket) do
+    Logger.info("HELLO #{inspect message}")
+    {:noreply, socket}
   end
 
   defp search(query) do
