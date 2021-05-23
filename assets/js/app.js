@@ -12,9 +12,57 @@ import "../css/app.scss"
 //     import {Socket} from "phoenix"
 //     import socket from "./socket"
 //
-import "phoenix_html"
 
 // assets/js/app.js
+// import "core-js/stable"
+
+// import "core-js"
+
+// import "core-js/stable"
+// import "regenerator-runtime/runtime"
+
+// import "mdn-polyfills/Object.assign"
+// import "mdn-polyfills/CustomEvent"
+// import "mdn-polyfills/String.prototype.startsWith"
+// import "mdn-polyfills/Array.from"
+// import "mdn-polyfills/Array.prototype.find"
+// import "mdn-polyfills/Array.prototype.some"
+// import "mdn-polyfills/NodeList.prototype.forEach"
+// import "mdn-polyfills/Element.prototype.closest"
+// import "mdn-polyfills/Element.prototype.matches"
+// import "mdn-polyfills/Node.prototype.remove"
+// import "child-replace-with-polyfill"
+// import "url-search-params-polyfill"
+// import "formdata-polyfill"
+// import "classlist-polyfill"
+// import "new-event-polyfill"
+// import "@webcomponents/template"
+// import "shim-keyboard-event-key"
+
+// assets/js/app.js
+// import "mdn-polyfills/Object.assign"
+// import "mdn-polyfills/CustomEvent"
+// import "mdn-polyfills/String.prototype.startsWith"
+// import "mdn-polyfills/Array.from"
+// import "mdn-polyfills/Array.prototype.find"
+// import "mdn-polyfills/NodeList.prototype.forEach"
+// import "mdn-polyfills/Element.prototype.closest"
+// import "mdn-polyfills/Element.prototype.matches"
+// import "mdn-polyfills/Node.prototype.remove"
+// import "child-replace-with-polyfill"
+// import "url-search-params-polyfill"
+// import "formdata-polyfill"
+// import "classlist-polyfill"
+// import "@webcomponents/template"
+// import "shim-keyboard-event-key"
+
+// import "core-js/features/set"
+// import "core-js/features/url"
+
+import "core-js/stable"
+// import "core-js"
+import "regenerator-runtime/runtime"
+
 import "mdn-polyfills/Object.assign"
 import "mdn-polyfills/CustomEvent"
 import "mdn-polyfills/String.prototype.startsWith"
@@ -32,15 +80,21 @@ import "classlist-polyfill"
 import "new-event-polyfill"
 import "@webcomponents/template"
 import "shim-keyboard-event-key"
-import "core-js/features/set"
-import "core-js/features/url"
+
+// import "core-js/stable"
+
+// import "core-js/features/set"
+// import "core-js/features/url"
+
+import "phoenix_html"
 
 import {Socket} from "phoenix"
 import topbar from "topbar"
 import {LiveSocket} from "phoenix_live_view"
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
-let liveSocket = new LiveSocket("/live", Socket, {params: {_csrf_token: csrfToken}})
+// let liveSocket = new LiveSocket("/live", Socket, {params: {_csrf_token: csrfToken}})
+let liveSocket = new LiveSocket("ws://lo_tube.howto:4000/live", Socket, {params: {_csrf_token: csrfToken}})
 
 // Show progress bar on live navigation and form submits
 topbar.config({barColors: {0: "#29d"}, shadowColor: "rgba(0, 0, 0, .3)"})

@@ -4,9 +4,25 @@ defmodule Ie11LvWeb.PageLive do
 
   @impl true
   def mount(_params, _session, socket) do
+    if connected?(socket),
+      do: Logger.info("CONNECTED"),
+      else: Logger.info("NOT CONNECTED")
+
     Logger.info("MOUNT")
     send(self(), {:hello, "world"})
     {:ok, assign(socket, query: "", results: %{})}
+  end
+
+  @impl true
+  def handle_params(_params, _url, socket) do
+    if connected?(socket),
+      do: Logger.info("CONNECTED"),
+      else: Logger.info("NOT CONNECTED")
+    Logger.info("HANDLE PARAMS")
+
+    send(self(), {:hello, "world"})
+
+    {:noreply, socket}
   end
 
   @impl true

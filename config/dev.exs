@@ -17,6 +17,7 @@ config :ie11_lv, Ie11Lv.Repo,
 # with webpack to recompile .js and .css sources.
 config :ie11_lv, Ie11LvWeb.Endpoint,
   http: [port: 4000],
+  url: [host: "lo_tube.howto"],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,

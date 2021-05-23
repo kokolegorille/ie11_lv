@@ -12,7 +12,7 @@ config :ie11_lv,
 
 # Configures the endpoint
 config :ie11_lv, Ie11LvWeb.Endpoint,
-  url: [host: "localhost"],
+  url: [host: "lo_tube.howto"],
   secret_key_base: "502ZL2RaeVJZZchHyonZn+To8gbg2U4PQBbn7V31jbfzNckaxb2xa2JIQKi5rpYp",
   render_errors: [view: Ie11LvWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Ie11Lv.PubSub,
